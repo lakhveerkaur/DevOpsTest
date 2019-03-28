@@ -1,0 +1,29 @@
+SELECT sm.stakeholder_id,to_timestamp(?,'YYYY-MM-DD HH24:MI:SS') AS start_time,to_timestamp(?,'YYYY-MM-DD HH24:MI:SS') AS end_time,"
+		connection_mode,max(sm.pv_voltage1)-min(sm.pv_voltage1) as pv_voltage1, 
+		 max(sm.pv_voltage2)-min(sm.pv_voltage2) as pv_voltage2, 
+		 max(sm.pv_current1)-min(sm.pv_current1) as pv_current1, 
+		 max(sm.pv_current2)-min(sm.pv_current2) as pv_current2,
+		 max(sm.solar_generation)-min(sm.solar_generation) as solar_generation,
+		'LYV_USER',current_timestamp from solar_meter_data sm 
+		 where hour >= to_timestamp(?,'YYYY-MM-DD HH24:MI:SS')
+		 and hour <= to_timestamp(?,'YYYY-MM-DD HH24:MI:SS')
+		 group by sm.stakeholder_id,start_time,end_time,connection_mode 
+		 
+		 
+		 
+select solar_generation from solar_meter_data where stakeholder_id = ? and hour  = (select max(hour) from solar_meter_data
+ where stakeholder_id =? and to_char(hour,'yyyy-mm-dd') = to_char(current_date,'yyyy-mm-dd'))
+ 
+ 
+ 
+ "627.900024414062"
+ "627.799987792969"
+ 
+    0.100036621093
+	0.0999755859
+	
+	a2q1m0zp5dqn3l-ats.iot.eu-west-2.amazonaws.com
+	
+	192.168.56.102
+	
+	cd /home/ec2-user/QAFileUploadSmtAndGas/bin
