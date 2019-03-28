@@ -17,7 +17,7 @@ select solar_generation from solar_meter_data where stakeholder_id = ? and hour 
  
  
  "627.900024414062"
- "627.799987792969"
+
  
     0.100036621093
 	0.0999755859
