@@ -1,3 +1,5 @@
+adding some changes directly in remote repo
+
 SELECT sm.stakeholder_id,to_timestamp(?,'YYYY-MM-DD HH24:MI:SS') AS start_time,to_timestamp(?,'YYYY-MM-DD HH24:MI:SS') AS end_time,"
 		connection_mode,max(sm.pv_voltage1)-min(sm.pv_voltage1) as pv_voltage1, 
 		 max(sm.pv_voltage2)-min(sm.pv_voltage2) as pv_voltage2, 
